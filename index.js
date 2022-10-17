@@ -7,7 +7,7 @@ loadCompleted();
 function setAllFalse() {
     completed = [];
 
-    for(let i = 0; i < 25; i++) {
+    for(let i = 0; i < 16; i++) {
         completed.push(false);
     }
 
@@ -51,7 +51,7 @@ function generateNewTasks() {
                 let indexes = [];
                 let jsonLength = json.tasks.length;
 
-                while (indexes.length < 25) {
+                while (indexes.length < 16) {
                     let index = getRandomInt(jsonLength);
                     if(!indexes.includes(index)){
                         indexes.push(index);
@@ -73,16 +73,16 @@ function createGrid() {
     table.classList.add('table');
     let comp = JSON.parse(window.localStorage.getItem('completed'));
 
-    for(let i = 0; i < 5; i++) {
+    for(let i = 0; i < 4; i++) {
         let tr = document.createElement('tr');
-        for(let j = 0; j < 5; j++) {
+        for(let j = 0; j < 4; j++) {
             let td = document.createElement('td');
             let div = document.createElement('div');
             div.classList.add('content');
-            div.classList.add((i*5 + j) + '');
-            div.innerText = tasks[(i*5 + j)];
+            div.classList.add((i*4 + j) + '');
+            div.innerText = tasks[(i*4 + j)];
 
-            if(comp[(i*5 + j)]) {
+            if(comp[(i*4 + j)]) {
                 div.classList.add('success');
             }
 

@@ -58,11 +58,11 @@ button:active {
 
 table {
     width: 100%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 td {
-    max-width: 20%;
+    max-width: 25%;
     position: relative;
 }
 
@@ -97,5 +97,12 @@ td .content {
     margin: 2px;
     box-shadow: 5px 5px 10px black;
     transition: transform 0.2s;
+    font-size: calc(12px + 0.3vw);;
+    text-align: center;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    word-break: break-word;
+    hyphens: auto;
+    padding: 2px;
 }
 
