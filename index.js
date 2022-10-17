@@ -15,7 +15,7 @@ function setAllFalse() {
 }
 
 function checkForData() {
-    let data = window.localStorage.getItem('indexes');
+    let data = localStorage.getItem('indexes');
 
     if(data == null) {
         generateNewTasks();
@@ -62,7 +62,7 @@ function generateNewTasks() {
                     tasks.push(json.tasks[i]);
                 })
 
-                window.localStorage.setItem('indexes', JSON.stringify(indexes));
+                localStorage.setItem('indexes', JSON.stringify(indexes));
 
                 createGrid();
         });
@@ -71,7 +71,7 @@ function generateNewTasks() {
 function createGrid() {
     let table = document.createElement('table');
     table.classList.add('table');
-    let comp = JSON.parse(window.localStorage.getItem('completed'));
+    let comp = JSON.parse(localStorage.getItem('completed'));
 
     for(let i = 0; i < 4; i++) {
         let tr = document.createElement('tr');
@@ -110,12 +110,12 @@ function succededTask(element) {
 }
 
 function saveCompleted() {
-    window.localStorage.setItem('completed', JSON.stringify(completed));
+    localStorage.setItem('completed', JSON.stringify(completed));
 }
 
 function loadCompleted() {
-    if(window.localStorage.getItem('completed') != null){
-        completed = JSON.parse(window.localStorage.getItem('completed'));
+    if(localStorage.getItem('completed') != null){
+        completed = JSON.parse(localStorage.getItem('completed'));
         return;
     }
     setAllFalse();
@@ -127,10 +127,10 @@ function getRandomInt(max) {
 
 document.querySelector('.generate').addEventListener('click', () => {
     document.querySelector('.table').remove();
-    window.localStorage.removeItem('indexes');
+    localStorage.removeItem('indexes');
     generateNewTasks();
 });
 
 document.querySelector('.print').addEventListener('click', () => {
-    window.print();
+    print();
 });
