@@ -86,7 +86,9 @@ function createGrid() {
                 div.classList.add('success');
             }
 
-            div.setAttribute( "onClick", "javascript: succededTask(this);");
+			div.addEventListener('click', (event) => {
+				succededTask(event.currentTarget);
+			});
             td.appendChild(div);
             tr.appendChild(td);
         }
