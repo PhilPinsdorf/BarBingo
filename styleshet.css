@@ -104,5 +104,6 @@ td .content {
     word-break: break-word;
     hyphens: auto;
     padding: 2px;
+	cursor: pointer;
 }
 
