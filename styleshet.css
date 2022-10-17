@@ -80,6 +80,10 @@ td .content:active {
     transform: scale(0.9);
 }
 
+td .content:hover {
+	background-color: var(--light-foreground-color);
+}
+
 td .content {
     position: absolute;
     font-family: 'Rubik', sans-serif;
